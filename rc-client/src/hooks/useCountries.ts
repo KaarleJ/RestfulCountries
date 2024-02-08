@@ -11,8 +11,8 @@ const useCountries = (search: string | null) => {
     const fetchCountries = async () => {
       setLoading(true);
       try {
-        const response = await getCountries(search);
-        setCountries(response);
+        const data = await getCountries(search);
+        setCountries(data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching countries", error);

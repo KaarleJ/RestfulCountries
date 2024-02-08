@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack as Back } from "react-icons/io";
 
 const Country = () => {
-  const { code } = useParams();
-  const { country, loading } = useCountry(code as string);
+  const { name } = useParams();
+  const { country, loading } = useCountry(name as string);
   const navigate = useNavigate();
 
   if (loading) {

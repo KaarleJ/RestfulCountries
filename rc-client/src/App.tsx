@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     errorElement: <div>Oops! Something went wrong</div>
   },
   {
-    path: "/country/:code",
+    path: "/country/:name",
     element: <Country />
   }
 ]);

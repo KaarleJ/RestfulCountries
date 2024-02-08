@@ -10,7 +10,7 @@ const Root = () => {
   const { countries, loading } = useCountries(search);
 
   return (
-    <div className="relative flex  flex-col justify-center items-center h-5/6 p-10 mt-5">
+    <div className="relative flex  flex-col justify-start items-center h-5/6 py-10 mt-5">
       <SearchBar className="absolute top-2 right-5" setParams={setSearchParams}/>
       {loading ? (
         <Loader size="48" />
