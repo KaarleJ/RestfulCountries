@@ -41,7 +41,7 @@ jobs:
 
     - name: Copy Dockerfile to root
       run: |
-        cp rc-server/src/main/docker/Dockerfile.jvm .
+        cp rc-server/src/main/docker/Dockerfile.jvm Dockerfile
 
     - uses: superfly/flyctl-actions/setup-flyctl@master
 
