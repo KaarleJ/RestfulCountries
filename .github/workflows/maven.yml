@@ -24,8 +24,8 @@ jobs:
         npm run build
     - name: Copy React Build to Quarkus App static folder
       run: |
-        mkdir -p rc-server/src/main/resources/static
-        cp -r rc-client/dist/* rc-server/src/main/resources/static/
+        mkdir -p rc-server/src/main/resources/META-INF/resources
+        cp -r rc-client/dist/* rc-server/src/main/resources/META-INF/resources/
 
     - name: Set up JDK 21
       uses: actions/setup-java@v3
