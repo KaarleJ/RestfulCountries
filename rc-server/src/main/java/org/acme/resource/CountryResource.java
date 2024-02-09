@@ -11,7 +11,6 @@ import org.jboss.resteasy.reactive.ClientWebApplicationException;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Response;
 
@@ -42,8 +41,8 @@ public class CountryResource {
     }
 
     @GET
-    @Path("/name/{name}")
-    public Response getCountryByName(@PathParam("name") String name) {
+    @Path("/name")
+    public Response getCountryByName(@QueryParam("name") String name) {
         try {
             List<Country> countries = restfulCountriesService.getOneByName(
                     new String[] { "name", "flags", "cca2", "population", "capital", "region", "subregion",
