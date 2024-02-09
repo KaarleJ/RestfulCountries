@@ -1,8 +1,7 @@
 package org.acme;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.InputStream;
+import java.util.Scanner;
 
 import org.jboss.resteasy.reactive.server.ServerResponseFilter;
 
@@ -18,8 +17,14 @@ public class Filters {
     if (responseContext.getStatus() == 404) {
       responseContext.setStatus(200);
       try {
-        responseContext.setEntity(Files.readString(Paths.get("src/main/resources/META-INF/resources/index.html")));
-      } catch (IOException e) {
+        InputStream stream = getClass().getResourceAsStream("/META-INF/resources/index.html");
+        if (stream != null) {
+          try (Scanner scanner = new Scanner(stream).useDelimiter("\\A")) {
+            String html = scanner.hasNext() ? scanner.next() : "";
+            responseContext.setEntity(html);
+          }
+        }
+      } catch (Exception e) {
         responseContext.setStatus(500);
         responseContext.setEntity("Internal Server Error");
       }
