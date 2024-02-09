@@ -117,6 +117,7 @@
         </configuration>
       </plugin>
     </plugins>
+    <finalName>rc-image</finalName>
   </build>
   <profiles>
     <profile>

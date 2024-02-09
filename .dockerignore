@@ -1,0 +1,74 @@
+# flyctl launch added from rc-client\.gitignore
+# Logs
+rc-client\**\logs
+rc-client\**\*.log
+rc-client\**\npm-debug.log*
+rc-client\**\yarn-debug.log*
+rc-client\**\yarn-error.log*
+rc-client\**\pnpm-debug.log*
+rc-client\**\lerna-debug.log*
+
+rc-client\**\node_modules
+rc-client\**\dist
+rc-client\**\dist-ssr
+rc-client\**\*.local
+
+# Editor directories and files
+rc-client\**\.vscode\*
+!rc-client\**\.vscode\extensions.json
+rc-client\**\.idea
+rc-client\**\.DS_Store
+rc-client\**\*.suo
+rc-client\**\*.ntvs*
+rc-client\**\*.njsproj
+rc-client\**\*.sln
+rc-client\**\*.sw?
+
+# flyctl launch added from rc-server\.gitignore
+#Maven
+rc-server\**\target
+rc-server\**\pom.xml.tag
+rc-server\**\pom.xml.releaseBackup
+rc-server\**\pom.xml.versionsBackup
+rc-server\**\release.properties
+rc-server\**\.flattened-pom.xml
+
+# Eclipse
+rc-server\**\.project
+rc-server\**\.classpath
+rc-server\**\.settings
+rc-server\**\bin
+
+# IntelliJ
+rc-server\**\.idea
+rc-server\**\*.ipr
+rc-server\**\*.iml
+rc-server\**\*.iws
+
+# NetBeans
+rc-server\**\nb-configuration.xml
+
+# Visual Studio Code
+rc-server\**\.vscode
+rc-server\**\.factorypath
+
+# OSX
+rc-server\**\.DS_Store
+
+# Vim
+rc-server\**\*.swp
+rc-server\**\*.swo
+
+# patch
+rc-server\**\*.orig
+rc-server\**\*.rej
+
+# Local environment
+rc-server\**\.env
+
+# Plugin directory
+rc-server\.quarkus\cli\plugins
+
+# flyctl launch added from rc-server\.mvn\wrapper\.gitignore
+rc-server\.mvn\wrapper\**\maven-wrapper.jar
+fly.toml
