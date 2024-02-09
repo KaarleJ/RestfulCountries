@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for restfulcountries on 2024-02-09T13:00:29+02:00
+# fly.toml app configuration file generated for restfulcountries on 2024-02-09T14:30:40+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -7,6 +7,7 @@ app = "restfulcountries"
 primary_region = "arn"
 
 [build]
+  dockerfile = "src/main/docker/Dockerfile.jvm"
 
 [http_service]
   internal_port = 8080
