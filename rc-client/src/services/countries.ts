@@ -1,7 +1,14 @@
 import { Country } from "../types";
 import axios from "axios";
 
-const apiUrl = "http://localhost:8080/api/countries";
+let apiUrl: string;
+
+
+if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+  apiUrl = 'http://localhost:8080/api/countries'; // replace with your development server URL
+} else {
+  apiUrl = 'https://restfulcountries.fly.dev/api/countries'; // replace with your production server URL
+}
 
 export const getCountries = async (search: string | null) => {
   if (search) {
