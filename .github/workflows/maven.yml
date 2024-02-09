@@ -37,7 +37,11 @@ jobs:
     - name: Build with Maven
       run: |
         cd rc-server
-        mvn clean install
+        mvn package
+
+    - name: Copy Dockerfile to root
+      run: |
+        cp rc-server/src/main/docker/Dockerfile.jvm .
 
     - uses: superfly/flyctl-actions/setup-flyctl@master
 
