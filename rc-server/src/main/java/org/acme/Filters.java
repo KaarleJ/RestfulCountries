@@ -22,6 +22,7 @@ public class Filters {
           try (Scanner scanner = new Scanner(stream).useDelimiter("\\A")) {
             String html = scanner.hasNext() ? scanner.next() : "";
             responseContext.setEntity(html);
+            responseContext.getHeaders().putSingle("Content-Type", "text/html");
           }
         }
       } catch (Exception e) {
