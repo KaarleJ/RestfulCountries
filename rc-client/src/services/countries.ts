@@ -21,6 +21,6 @@ export const getCountries = async (search: string | null) => {
 };
 
 export const getCountry = async (name: string) => {
-  const res = await axios.get<Country>(`${apiUrl}/name?name=${name}`);
+  const res = await axios.get<Country>(`${apiUrl}/name/${name}`);
   return res.data;
 };
