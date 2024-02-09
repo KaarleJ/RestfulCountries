@@ -39,14 +39,10 @@ jobs:
         cd rc-server
         mvn package
 
-    - name: Copy Dockerfile to root
-      run: |
-        cp rc-server/src/main/docker/Dockerfile.jvm Dockerfile
-
     - uses: superfly/flyctl-actions/setup-flyctl@master
 
 
     - name: Deploy to Fly.io
-      run: flyctl deploy --remote-only
+      run: flyctl deploy --dockerfile ./rc-server/src/main/docker/Dockerfile.jvm
       env:
         FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
