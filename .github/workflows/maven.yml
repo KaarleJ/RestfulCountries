@@ -45,6 +45,6 @@ jobs:
     - name: Deploy to Fly.io
       run: |
         cd rc-server/src
-       flyctl deploy --dockerfile ./rc-server/src/main/docker/Dockerfile.jvm
+        flyctl deploy --dockerfile ./rc-server/src/main/docker/Dockerfile.jvm
       env:
         FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
