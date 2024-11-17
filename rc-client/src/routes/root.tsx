@@ -12,7 +12,7 @@ const Root = () => {
   const { countries, loading } = useCountries(search);
 
   return (
-    <div className="flex flex-col justify-start items-center mt-36  ">
+    <div className="flex flex-col justify-start items-center mx-36 mt-32">
       <AppHeader>
         <SearchBar
           setParams={setSearchParams}

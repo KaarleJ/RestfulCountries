@@ -4,7 +4,7 @@ interface PaperProps {
 
 const Paper = ({ children }: PaperProps) => {
   return (
-    <div className="bg-white w-full h-full shadow-xl shadow-yellow-700 rounded-sm mt-10 mb-10 overflow-y-auto">
+    <div className="bg-white h-[45rem] w-full p-4 pr-0 shadow-xl shadow-yellow-700 rounded-sm mb-10">
       {children}
     </div>
   );
