@@ -34,10 +34,15 @@ jobs:
         distribution: 'temurin'
         cache: maven
   
-    - name: Build with Maven
+    - name: Build Quarkus native image
       run: |
         cd rc-server
-        mvn package
+        mvn package -Pnative "-Dquarkus.native.container-build=true"
+
+    - name: Build Docker image
+      run: |
+        cd rc-server
+        docker build -f src/main/docker/Dockerfile.native-micro -t my-quarkus-app-native .
 
     - uses: superfly/flyctl-actions/setup-flyctl@master
 
@@ -45,6 +50,6 @@ jobs:
     - name: Deploy to Fly.io
       run: |
         cd rc-server
-        flyctl deploy --dockerfile src/main/docker/Dockerfile.native
+        flyctl deploy --dockerfile src/main/docker/Dockerfile.native-micro --remote-only
       env:
         FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
