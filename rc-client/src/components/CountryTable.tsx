@@ -10,7 +10,7 @@ const CountryTable = ({ countries }: { countries: Country[] }) => {
     );
   }
   return (
-    <div className="overflow-y-auto w-full h-full overflow-x-hidden px-5">
+    <div className="overflow-y-auto w-full h-full overflow-x-hidden md:px-5">
       {countries.map((country) => (
         <CountryCard
           key={country.code}

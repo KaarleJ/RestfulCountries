@@ -22,7 +22,7 @@ const Country = () => {
       {!country ? (
         <p>No country found</p>
       ) : (
-        <div className="relative flex flex-row justify-between text-yellow-950 p-36 text-left">
+        <div className="relative flex flex-col-reverse md:flex-row justify-between text-yellow-950 px-4 pt-20 pb-4 md:px-24 md:py-36 text-left">
           <button
             onClick={() => navigate(-1)}
             className="absolute top-5 left-5 bg-gray-300 px-2 rounded-md border-2 border-gray-500 text-gray-500 hover:brightness-90"
